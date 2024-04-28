@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- link bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+
+    <style>
+        .botaoinicio,
+        #inicio {
+            /* FIXANDO O BOTÃO NO LADO DIREITO SUPERIOR */
+            background-color: none;
+            color: whitesmoke;
+            font-weight: bold;
+            /* POSICIONAMENTO */
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        /* END POSICIONAMENTO */
+        }
+
+        .borda {
+            /* BORDA DO TITULO */
+            color: black;
+            border-left-width: 0px;
+            border-top-width: 0px;
+            border-right-width: 0px;
+            border-bottom-width: 8px;
+            border-style: solid;
+            /* END */
+        }
+
+        #tituloprincipal {
+            /* ESTILO DO TITULO */
+            text-align: center;
+            font-weight: bolder;
+            font-size: 25px;
+            color: whitesmoke;
+            /* END */
+        }
+
+        .container {
+            /* DIV DOS INPUTS DA PAGINA 
+            height - auto -> Para fazer com que a div adapte-se quando input for executado */
+            background-color: black;
+            /* POSICIONAMENTO */
+            padding-top: 10px;
+            max-width: 1000px;
+            width: 500px;
+            min-width: 100px;
+            max-height: 500px;
+            height: auto;
+            min-height: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 120px;
+            /* END POSICIONAMENTO*/
+            /* BORDA */
+            border-width: 10px;
+            border-color: whitesmoke;
+            border-style: groove;
+            /* END BORDA*/
+            /* TEXTO */
+            font-size: 20px;
+            font-weight: bolder;
+            text-align: center;
+            color: whitesmoke;
+            /* END TEXTO*/
+        }
+
+        #corpo {
+            /* ESTILO COR DE FUNDO */
+            background-color: rgb(51, 146, 146);
+        }
+
+        #botaocalcular {
+            margin-top: 20px;
+            text-align: center;
+            font-style: normal;
+
+        }
+
+        .resultadoimc {
+            padding-top: 15px;
+            font-size: 20px;
+            font-style: normal;
+
+        }
+
+        .footer {
+            /* ESTILO RODAPÉ E MANTER FIXADO NO FINAL DA PAGINA*/
+            background-color: rgb(9, 98, 98);
+            /* POSICIONAMENTO */
+            width: 100%;
+            max-height: 100px;
+            height: auto;
+            min-height: 10px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            /* END POSICIONAMENTO */
+            text-align: center;
+            background: black;
+        }
+
+        .citacao {
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .card-body {
+            color: white;
+        }
+
+        .card-text {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body id="corpo">
+    <!-- INICIO DO TITULO -->
+    <div class="borda">
+        <div>
+            <p id="tituloprincipal">CALCULADORA DE I.M.C</p>
+            <div class="botaoinicio">
+                <a id="inicio" href="http://127.0.0.1:8000/">INICIO</a>
+            </div>
+            <!-- <hr id="linha"> -->
+        </div>
+        <!-- FIM DO TITULO -->
+    </div>
+
+    <!-- INICIO DA DIVI CONTAINER -->
+    <div class="container">
+
+        <!-- INICIO DO FORMULARIO -->
+        <form action="{% url 'imc' %}" method="post">
+            <!-- Quando uso o metodo post, deve ser inserindo a linha de código abaixo, isso é um metodo de segurança de criptografia do Python -->
+            {% csrf_token %}
+            SEU PESO: <input type="text" name="peso">
+            <p></p>
+            SUA ALTURA: <input type="text" name="altura">
+            <p></p>
+
+            <div>
+                <button id="botaocalcular" type="submit">
+                    Calcular
+                </button>
+            </div>
+        </form>
+        <!-- FIM DO FORMULARIO -->
+
+        <!-- Para executar um comando pyhton devo seguir a estrutura abaixo 
+    INCIO DO CÓDIGO PYTHON-->
+
+        <!-- Se o resultado for de acordo com as condições, aparecera o resultado, se não, aparecera uma mensagem de erro ao usuario -->
+
+        <!-- Ao lado das condições (if, elif, else) é o nome da variavel que será chamada -->
+        <p></p>
+        {% if resultado %}
+
+        <h3 id="resultadoimc">SEU IMC: {{resultado}}</h3>
+
+        {% elif erro %}
+        <h4 id="resultadoimc">{{erro}}</h4>
+
+        {% endif %}
+
+        <!-- FIM DO CÓDIGO PYTHON -->
+    </div>
+    <!-- FIM DA DIVI CONTAINER -->
+
+    <!-- INICIO DO FOOTER -->
+
+    <div class="footer">
+        <div class="card-body">
+            <h5 class="card-title">EM DESENVOLVIMENTO CALCULADORA DE IMC</h5>
+            <cite class="citacao"> By João Victor Ventura</cite>
+        </div>
+    </div>
+    <!-- FIM DO FOOTER -->
+
+    <!-- link bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+
+    <style>
+        .col-sm-1,#by { 
+            background-color: black;
+        }
+
+        #divtitulo,.col-sm-10,.btn,.card-header,#cliqueaqui  {
+            background-color:rgb(51, 146, 146);
+        }
+
+        #titulo {
+            text-align: center;
+            font-weight: bolder;
+            font-size: 35px;
+            color: whitesmoke;
+        }
+
+        .card-title {
+            font-style: italic;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px;
+        }
+
+        .card-text {
+            text-decoration: solid;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: justify;
+            font-weight: bold;
+            word-spacing: 6px;
+        }
+
+        .display-4 {
+            font-style: italic;
+            font-weight: bolder;
+        }
+        .btn {
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+            text-align: right;
+            margin-left: 50px;
+        }
+        #divtextos {
+            margin-top: 40px;
+        }
+        #princialtxt, #segundotxt {
+            border: none;
+        }
+        /* .container-fluid {
+            background-color: rgb(0, 96, 120);
+
+        } */
+        
+        .footer {
+            /* Rodapé fixado */
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            margin: 0;
+        }
+
+
+        #aumentadiv {
+            height: 100%;
+            max-height: 1000px;
+            min-height: 40px;
+        }
+
+        .blockquote-footer {
+            color: whitesmoke;
+            font-style: italic;
+            font-weight: bold;
+            
+        }
+    </style>
+</head>
+
+<body id="pagina">
+    <!-- INICIO DO CONTAINER -->
+    <div class="container-fluid">
+
+
+        <!-- INICIO DO MENU -->
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <!-- INICIO DO CARD -->
+                <div id="divtitulo" class="card-header">
+                    <h3 id="titulo">I.M.C</h3>
+                </div>
+                <!-- FIM DO CARD  -->
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <!-- FIM DO MENU -->
+
+        <!-- INICIO DAS COLUNAS -->
+        <div id="divtextos" class="row">
+            <!-- INICIO DA PRIMEIRA COLUNA -->
+            <div class="col-1">
+
+            </div>
+            <!-- FIM DA PRIMEIRA COLUNA -->
+
+            <!-- INICO DA SEGUNDA COLUNA  -->
+            <div class="col-6">
+                <!-- INICIO DO CARD -->
+                <div id="princialtxt" class="card w-75">
+                    <div class="card-body">
+                        <h5 class="card-title">O que é IMC?</h5>
+                        <ul>
+                            <li class="card-text">Índice de Massa Corporal</li>
+                        </ul>
+
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Para que server?</h5>
+                        <ul>
+                            <li class="card-text"> É um cálculo simples que permite medir se alguém está ou não com o
+                                peso ideal.</li>
+                        </ul>
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">Por que é importante saber o IMC?</h5>
+                        <ul>
+                            <li class="card-text"> Saber o IMC é importante para verificar se o peso está de acordo com
+                                a altura da pessoa, além de ser importante para saber se existe risco de desenvolver
+                                alguma doença. </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- FIM DO CARD -->
+            </div>
+            <!-- FIM DA SEGUNDA COLUNA  -->
+
+            <!-- INICIO DA TERCEIRA COLUNA  -->
+            <div class="col-5">
+                <!-- INICIO DO CARD  -->
+                <div id="segundotxt" class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="/static/img/tabela.jpg" alt="Imagem de capa do card">
+                    <div class="card-body">
+                        <h4 class="card-title">Como calcular?</h4>
+                        <p class="card-text">De forma simplificada, temos:</p>
+                        <ul>
+                            <li>peso/(altura x altura) = IMC</li>
+                        </ul>
+                        <a href="http://127.0.0.1:8000/calculando" class="btn">CALCULAR IMC</a>
+                    </div>
+                </div>
+                <!-- FIM DO CARD  -->
+            </div>
+            <!-- FIM DA TERCEIRA COLUNA  -->
+        </div>
+    </div>
+    <!-- FIM DAS COLUNAS -->
+
+    <!-- INICIO DO NOVO FOOTER-->
+    <div class="footer">
+        <div id="aumentadiv" class="card-header">
+        </div>
+        <div id="by" class="card-body">
+            <blockquote class="blockquote mb-0">
+                <footer class="blockquote-footer">
+                    <cite> Desenvolvido por João Victor Ventura</cite>
+                </footer>
+            </blockquote>
+        </div>
+    </div>
+    <!-- FIM DO NOVO FOOTER -->
+
+    </div>
+    <!-- FIM DO CONTAINER  -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
