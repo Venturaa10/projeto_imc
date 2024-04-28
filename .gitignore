@@ -1,4 +1,4 @@
-
+# ignorando o arquivo que contém a chave secreta do Django
 .env
 
 # Criado por https://www.toptal.com/developers/gitignore/api/django
